@@ -32,7 +32,9 @@ function fmt(value: number, step: number): string {
 
 export function PizzaCalculator() {
   const [numberOfBalls, setNumberOfBalls] = useState(4)
+  const [numberOfBallsInput, setNumberOfBallsInput] = useState('4')
   const [ballWeight, setBallWeight] = useState(280)
+  const [ballWeightInput, setBallWeightInput] = useState('280')
   const [prefermentType, setPrefermentType] = useState<PrefermentType>('biga')
   const [prefermentPercentage, setPrefermentPercentage] = useState(30)
   const [prefermentHydration, setPrefermentHydration] = useState(50)
@@ -84,10 +86,14 @@ export function PizzaCalculator() {
                   min={1}
                   max={100}
                   step={1}
-                  value={numberOfBalls}
-                  onChange={(e) =>
-                    setNumberOfBalls(Math.max(1, Math.min(100, Number(e.target.value))))
-                  }
+                  value={numberOfBallsInput}
+                  onChange={(e) => setNumberOfBallsInput(e.target.value)}
+                  onBlur={() => {
+                    const parsed = parseInt(numberOfBallsInput, 10)
+                    const clamped = isNaN(parsed) ? 4 : Math.max(1, Math.min(100, parsed))
+                    setNumberOfBalls(clamped)
+                    setNumberOfBallsInput(String(clamped))
+                  }}
                 />
               </div>
               <div className="space-y-1.5">
@@ -98,10 +104,14 @@ export function PizzaCalculator() {
                   min={150}
                   max={400}
                   step={5}
-                  value={ballWeight}
-                  onChange={(e) =>
-                    setBallWeight(Math.max(150, Math.min(400, Number(e.target.value))))
-                  }
+                  value={ballWeightInput}
+                  onChange={(e) => setBallWeightInput(e.target.value)}
+                  onBlur={() => {
+                    const parsed = parseInt(ballWeightInput, 10)
+                    const clamped = isNaN(parsed) ? 260 : Math.max(150, Math.min(400, parsed))
+                    setBallWeight(clamped)
+                    setBallWeightInput(String(clamped))
+                  }}
                 />
               </div>
             </div>
