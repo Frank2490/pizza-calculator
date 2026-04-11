@@ -45,7 +45,7 @@ export function calculatePizza(inputs: CalculatorInputs): CalculatorResults {
   // KROK 5 — Drożdże w prefermencie
   const prefermentYeastRate =
     prefermentType === 'biga'
-      ? 0.002
+      ? 0.005
       : prefermentType === 'poolish'
         ? 0.001
         : 0
