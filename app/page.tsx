@@ -12,7 +12,6 @@ export default function Home() {
             🍕 Pizza Calculator
           </h1>
           <p className="text-base text-muted-foreground">
-            Contemporanea · Ciasto jak z neapolitańskiej pizzerii
           </p>
           <div className="pt-2 border-b border-border" />
         </header>
