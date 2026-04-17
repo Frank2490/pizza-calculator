@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import { Inter, Playfair_Display } from "next/font/google";
 import { Geist_Mono } from "next/font/google";
 import "./globals.css";
@@ -22,6 +22,15 @@ export const metadata: Metadata = {
   title: "Pizza Calculator — Contemporanea",
   description:
     "Kalkulator ciasta do pizzy contemporanea. Biga, poolish i fermentacja jednofazowa.",
+  appleWebApp: {
+    capable: true,
+    title: "Pizza Calc",
+    statusBarStyle: "default",
+  },
+};
+
+export const viewport: Viewport = {
+  themeColor: "#C84B31",
 };
 
 export default function RootLayout({
