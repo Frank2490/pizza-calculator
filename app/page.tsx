@@ -1,5 +1,4 @@
 import { PizzaCalculator } from "@/app/components/PizzaCalculator";
-import { PizzaioloTips } from "@/app/components/PizzaioloTips";
 
 export default function Home() {
   return (
@@ -15,18 +14,6 @@ export default function Home() {
           </p>
           <div className="pt-2 border-b border-border" />
         </header>
-
-        {/* PORADY */}
-        <PizzaioloTips />
-
-        {/* SEPARATOR */}
-        <div className="flex items-center gap-3">
-          <div className="flex-1 border-t border-border" />
-          <span className="text-xs font-semibold tracking-widest text-muted-foreground uppercase">
-            Kalkulator
-          </span>
-          <div className="flex-1 border-t border-border" />
-        </div>
 
         {/* KALKULATOR */}
         <PizzaCalculator />
