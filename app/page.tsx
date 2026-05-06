@@ -1,4 +1,5 @@
 import { PizzaCalculator } from "@/app/components/PizzaCalculator";
+import { ChefHat } from "lucide-react";
 
 export default function Home() {
   return (
@@ -8,7 +9,7 @@ export default function Home() {
         {/* HEADER */}
         <header className="space-y-2">
           <h1 className="font-heading text-4xl font-bold tracking-tight text-foreground sm:text-5xl">
-            🍕 Pizza Calculator
+            <ChefHat className="inline-block mr-3 mb-1" size={40} strokeWidth={1.5} />Pizza Calculator
           </h1>
           <p className="text-base text-muted-foreground">
           </p>
